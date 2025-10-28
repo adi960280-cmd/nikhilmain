@@ -1144,14 +1144,14 @@ async def txt_handler(bot: Client, m: Message):
          
             elif "https://cpvod.testbook.com/" in url or "classplusapp.com/drm/" in url:
                 url = url.replace("https://cpvod.testbook.com/","https://media-cdn.classplusapp.com/drm/")
-                url = f"https://cpatbots-updatee.onrender.com/extract_keys?url={url}@bots_updatee&user_id={user_id}"
+                url = f"https://covercel.vercel.app/extract_keys?url={url}@bots_updatee&user_id={user_id}"
                 #url = f"https://scammer-keys.vercel.app/api?url={url}&token={cptoken}&auth=@scammer_botxz1"
                 mpd, keys = helper.get_mps_and_keys(url)
                 url = mpd
                 keys_string = " ".join([f"--key {key}" for key in keys])
 
             elif "classplusapp" in url:
-                signed_api = f"https://cpatbots-updatee.onrender.com/extract_keys?url={url}@bots_updatee&user_id={user_id}"
+                signed_api = f"https://covercel.vercel.app/extract_keys?url={url}@bots_updatee&user_id={user_id}"
                 response = requests.get(signed_api, timeout=60)
                 url = response.text.strip()
                 url = response.json()['url']  
@@ -1529,8 +1529,8 @@ async def text_handler(bot: Client, m: Message):
                 keys_string = " ".join([f"--key {key}" for key in keys])
 
             elif "classplusapp" in url:
-                signed_api = f"https://dragoapi.vercel.app/classplus?link=" + url
-                response = requests.get(signed_api, timeout=20)
+                signed_api = f"https://covercel.vercel.app/extract_keys?url={url}@bots_updatee&user_id={user_id}"
+                response = requests.get(signed_api, timeout=200)
                 #url = response.text.strip()
                 url = response.json()['url']  
 
@@ -1550,11 +1550,11 @@ async def text_handler(bot: Client, m: Message):
                 url   = response.json()['url']
 
             elif "childId" in url and "parentId" in url:
-                url = f"https://pwplayer-38c1ae95b681.herokuapp.com/pw?url={url}&token={raw_text4}"
+                url = f"https://anonymouspwplayer-25261acd1521.herokuapp.com/pw?url={url}&token={pw_token}"
                            
             elif "d1d34p8vz63oiq" in url or "sec1.pw.live" in url:
                 vid_id =  url.split('/')[-2]
-                url = f"https://anonymouspwplayerr-f996115ea61a.herokuapp.com/pw?url={url}&token={pw_token}"
+                url = f"https://anonymouspwplayer-25261acd1521.herokuapp.com/pw?url={url}&token={pw_token}"
                 
             if ".pdf*" in url:
                 url = f"https://dragoapi.vercel.app/pdf/{url}"
